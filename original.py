@@ -8,6 +8,9 @@ def buscar_pagina(url):
     if response.status_code == 200:
         pagina = BeautifulSoup(response.text, "html.parser")
         print("Requisição OK!")
+        # print("+-" * 30)
+        # print(pagina)
+        # print("+-" * 30)
         return pagina
     else:
         print("URL inválida!")
@@ -291,5 +294,6 @@ def executar(url):
 
 if __name__ == "__main__":
     # URL = input("Inserir a url aqui: ")
-    URL = "https://www.sefaz.mt.gov.br/nfce/consultanfce?p=51260109477652019610651100000027241902953355|2|1|1|37780E9EEC7023546CB9EF4EB15B5E3EE4734C32"
+    # URL = "https://www.sefaz.mt.gov.br/nfce/consultanfce?p=51260109477652019610651100000027241902953355|2|1|1|37780E9EEC7023546CB9EF4EB15B5E3EE4734C32"
+    URL = "https://www.sefaz.mt.gov.br/nfce/consultanfce?p=51240123014826001004653060001954881214211623|2|1|1|ef586c39af7d495041c8861909b45ecc1439392c"
     executar(URL)

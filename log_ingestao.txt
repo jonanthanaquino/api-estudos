@@ -1,0 +1,20 @@
+2026-03-15 13:39:35,736 | INFO | ======================================================================
+2026-03-15 13:39:35,736 | INFO | Execução iniciada
+2026-03-15 13:39:35,736 | INFO | Total de URLs: 6
+2026-03-15 13:39:35,736 | INFO | ======================================================================
+2026-03-15 13:39:35,944 | INFO | OK | https://www.sefaz.mt.gov.br/nfce/consultanfce?p=51230923014826000610652060005999561224985340|2|1|a45a2aa53df3c11ec00af8badaf
+2026-03-15 13:39:41,053 | INFO | HTTP Request: GET https://dmtxeyathjpcicmvemsa.supabase.co/rest/v1/estabelecimentos?select=%2A&cnpj=eq.23014826001004 "HTTP/2 200 OK"
+2026-03-15 13:39:41,291 | INFO | HTTP Request: POST https://dmtxeyathjpcicmvemsa.supabase.co/rest/v1/estabelecimentos "HTTP/2 201 Created"
+2026-03-15 13:39:41,503 | INFO | HTTP Request: GET https://dmtxeyathjpcicmvemsa.supabase.co/rest/v1/notas?select=%2A&numero=eq.195488&serie=eq.306&estabelecimento_id=eq.22 "HTTP/2 200 OK"
+2026-03-15 13:39:41,728 | INFO | HTTP Request: POST https://dmtxeyathjpcicmvemsa.supabase.co/rest/v1/notas "HTTP/2 201 Created"
+2026-03-15 13:39:41,956 | INFO | HTTP Request: POST https://dmtxeyathjpcicmvemsa.supabase.co/rest/v1/itens?columns=%22descricao%22%2C%22quantidade%22%2C%22codigo%22%2C%22valor_total%22%2C%22nota_id%22%2C%22valor_unitario%22%2C%22unidade%22 "HTTP/2 201 Created"
+2026-03-15 13:39:41,956 | INFO | OK | https://www.sefaz.mt.gov.br/nfce/consultanfce?p=51240123014826001004653060001954881214211623|2|1|1|ef586c39af7d495041c8861909b45ecc1439392c
+2026-03-15 13:39:44,867 | ERROR | ERRO | https://fce?p=51230805931411000629655150001390741461416811E47F0F283E02023E67BB948FF6B30028 | URL informada não pertence à SEFAZ
+2026-03-15 13:39:50,869 | ERROR | ERRO | https://www.sefaz.mt.1000629655150001390741461416FE94E47F0F283E02023E67BB948FF6B30028 | Failed to parse: 'www.sefaz.mt.1000629655150001390741461416fe94e47f0f283e02023e67bb948ff6b30028', label empty or too long
+2026-03-15 13:39:56,950 | ERROR | ERRO | https://www.sefaz.mt.go | HTTPSConnectionPool(host='www.sefaz.mt.go', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='www.sefaz.mt.go', port=443): Failed to resolve 'www.sefaz.mt.go' ([Errno 11001] getaddrinfo failed)"))
+2026-03-15 13:40:03,154 | INFO | OK | https://www.sefaz.mt.gov.br/nfce/consultanfce?p=51230805931411000629655090002491501809344101|2|1|6|32E2BC9984CCDAA3DA90A9B0371A607D6A80643
+2026-03-15 13:40:06,321 | INFO | Resumo da execução
+2026-03-15 13:40:06,321 | INFO | Total: 6
+2026-03-15 13:40:06,321 | INFO | Sucesso: 3
+2026-03-15 13:40:06,321 | INFO | Erro: 3
+2026-03-15 13:40:06,321 | INFO | ======================================================================

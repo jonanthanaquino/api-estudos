@@ -7,6 +7,19 @@ def extrair_estabelecimento(pagina):
     return None
 
 
+def pagina_eh_nfce_valida(pagina):
+    # texto = pagina.get_text()
+
+    # marcador = "DOCUMENTO AUXILIAR DA NOTA FISCAL DE CONSUMIDOR ELETRÔNICA"
+    texto = pagina.get_text().lower()
+    marcador = "documento auxiliar da nota fiscal de consumidor eletrônica"
+
+    if marcador in texto:
+        return True
+
+    return False
+
+
 def extrair_cnpj(pagina):
     elemento = pagina.find_all("div", class_="text")[0]
 
