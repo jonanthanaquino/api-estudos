@@ -77,11 +77,84 @@ def extrair_produtos(pagina):
     return lista_produtos
 
 
+def extrair_forma_pagamento(pagina):
+    elemento = pagina.find_all("label", class_="tx")[0]
+
+    if elemento:
+        return elemento.text.replace("\n", "").replace("\t", "").strip()
+
+    return None
+
+
+def extrair_numero_nota(pagina):
+    elemento = pagina.find_all("ul")[0].find("li")
+
+    texto = elemento.get_text(" ", strip=True).split()
+
+    return texto[3] if len(texto) > 3 else None
+
+
+def extrair_serie_nota(pagina):
+    elemento = pagina.find_all("ul")[0].find("li")
+
+    texto = elemento.get_text(" ", strip=True).split()
+
+    return texto[5] if len(texto) > 5 else None
+
+
+def extrair_data_emissao(pagina):
+    elemento = pagina.find_all("ul")[0].find("li")
+
+    texto = elemento.get_text(" ", strip=True).split()
+
+    return texto[7] if len(texto) > 7 else None
+
+
+def extrair_hora_emissao(pagina):
+    elemento = pagina.find_all("ul")[0].find("li")
+
+    texto = elemento.get_text(" ", strip=True).split()
+
+    return texto[8] if len(texto) > 8 else None
+
+
+def extrair_protocolo(pagina):
+    elemento = pagina.find_all("ul")[0].find("li")
+
+    texto = elemento.get_text(" ", strip=True).split()
+
+    return texto[15] if len(texto) > 15 else None
+
+
+def extrair_data_protocolo(pagina):
+    elemento = pagina.find_all("ul")[0].find("li")
+
+    texto = elemento.get_text(" ", strip=True).split()
+
+    return texto[16] if len(texto) > 16 else None
+
+
+def extrair_hora_protocolo(pagina):
+    elemento = pagina.find_all("ul")[0].find("li")
+
+    texto = elemento.get_text(" ", strip=True).split()
+
+    return texto[17] if len(texto) > 17 else None
+
+
 def extrair_dados(pagina):
     nota = {
         "estabelecimento": extrair_estabelecimento(pagina),
         "cnpj": extrair_cnpj(pagina),
         "endereco": extrair_endereco(pagina),
+        "forma_pagamento": extrair_forma_pagamento(pagina),
+        "numero_nota": extrair_numero_nota(pagina),
+        "serie_nota": extrair_serie_nota(pagina),
+        "data_emissao": extrair_data_emissao(pagina),
+        "hora_emissao": extrair_hora_emissao(pagina),
+        "protocolo": extrair_protocolo(pagina),
+        "data_protocolo": extrair_data_protocolo(pagina),
+        "hora_protocolo": extrair_hora_protocolo(pagina),
     }
 
     produtos = extrair_produtos(pagina)
