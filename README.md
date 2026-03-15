@@ -1,36 +1,81 @@
+
+# Arquitetura do projeto
+
 ```
 
 projeto-sefaz/
 │
-├── app/
-│   │
-│   ├── main.py              # inicializa FastAPI
-│   │
-│   ├── api/
-│   │   └── routes.py        # endpoints da API
-│   │
-│   ├── services/
-│   │   └── nfce_service.py  # lógica principal da aplicação
-│   │
-│   ├── scrapers/
-│   │   └── sefaz_scraper.py # baixa HTML da página
-│   │
-│   ├── parsers/
-│   │   └── nfce_parser.py   # extrai dados do HTML
-│   │
-│   ├── models/
-│   │   └── schemas.py       # modelos de dados (Pydantic)
-│   │
-│   └── utils/
-│       └── helpers.py       # funções auxiliares
-│
-├── tests/
-│
+├── .env
+├── .gitignore
+├── .python-version
+├── README.md
+├── app
+│   ├── __init__
+│   ├── api
+│   │   └── routes.py
+│   ├── database
+│   │   ├── connection.py
+│   │   └── supabase_client.py
+│   ├── main.py
+│   ├── models
+│   │   └── schemas.py
+│   ├── parsers
+│   │   └── nfce_parser.py
+│   ├── repository
+│   │   ├── nfce_repository.py
+│   │   └── test_supabase.py
+│   ├── scrapers
+│   │   └── sefaz_scraper.py
+│   ├── services
+│   │   └── nfce_service.py
+│   └── utils
+│       └── normalizers.py
+├── arvore.py
+├── notas.txt
+├── original.py
 ├── pyproject.toml
-│
-└── README.md
+└── uv.lock
+
 
 ```
+
+
+# Estrutura do banco
+
+```
+estabelecimentos
+│
+├─ id
+├─ cnpj
+├─ nome
+└─ endereco
+
+notas
+│
+├─ id
+├─ numero
+├─ serie
+├─ data_emissao
+├─ hora_emissao
+├─ forma_pagamento
+├─ protocolo
+└─ estabelecimento_id
+
+itens
+│
+├─ id
+├─ nota_id
+├─ descricao
+├─ codigo
+├─ quantidade
+├─ unidade
+├─ valor_unitario
+└─ valor_total
+
+```
+
+
+
 
 
 ## Rodar a api
