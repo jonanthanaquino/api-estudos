@@ -31,3 +31,7 @@ projeto-sefaz/
 └── README.md
 
 ``
+
+
+## Rodar a api
+uvicorn app.main:app --reload
