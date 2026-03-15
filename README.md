@@ -75,7 +75,41 @@ itens
 ```
 
 
+# Banco atual
+```
+estabelecimento
+      │
+      ▼
+nota
+      │
+      ▼
+itens
+```
 
+# Pipeline atual do sistema
+
+```
+
+POST /nfce
+      │
+      ▼
+scraper (requests + bs4)
+      │
+      ▼
+parser (extrai dados da nota)
+      │
+      ▼
+service (orquestra fluxo)
+      │
+      ▼
+normalização (cnpj)
+      │
+      ▼
+repository
+      │
+      ▼
+Supabase (PostgreSQL)
+```
 
 
 ## Rodar a api
