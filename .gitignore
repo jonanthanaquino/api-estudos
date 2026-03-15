@@ -6,6 +6,7 @@ dist/
 wheels/
 *.egg-info
 anotacoes.md
+notas.txt
 
 # Virtual environments
 .venv
